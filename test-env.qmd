@@ -1,0 +1,24 @@
+---
+title: "test-env"
+---
+
+## Quarto
+
+R package/environment setup: 
+```{r, message = F}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(stringr)
+```
+
+```{r include = F}
+library(reticulate)
+```
+
+Python package/environment setup:
+```{python env-setup}
+import pandas as pd
+from plotnine import *
+```
