@@ -20,5 +20,5 @@ library(reticulate)
 Python package/environment setup:
 ```{python env-setup}
 import pandas as pd
-from plotnine import *
+# from plotnine import *
 ```
