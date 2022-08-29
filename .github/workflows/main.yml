@@ -30,6 +30,13 @@ jobs:
       run: |
         echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
 
+    - name: Setup python virtualenv
+      run: |
+        reticulate::virtualenv_create("testbook", packages = c("matplotlib", "numpy"))
+        reticulate::virtualenv_install("testbook", "numpy",
+          pip_options = c("--no-binary=numpy",  "--force-reinstall"))
+      shell: Rscript {0}
+
     - name: Install R dependencies
       if: runner.os == 'Linux'
       shell: Rscript {0}
